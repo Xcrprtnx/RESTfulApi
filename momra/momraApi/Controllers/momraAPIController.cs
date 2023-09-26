@@ -17,7 +17,6 @@ namespace momraApi.Controllers
             return accountStore.accountList;
         }
         [HttpPost]
-         
         public ActionResult<accountsDTO> CreateAccount([FromBody]accountsDTO accountsDTO) 
         { 
             if(accountsDTO == null)
@@ -27,15 +26,16 @@ namespace momraApi.Controllers
             return Ok(accountsDTO);
         }
 
-      //  [Route("/issuesList")]
+        [Route("/issue")]
         [HttpGet]
         public IEnumerable<issuesListDTO> GetissuesList()
         {
 
             return issuesListStore.issueList;
         }
-        [HttpPost]
 
+        [Route("/issue")]
+        [HttpPost]
         public ActionResult<issuesListDTO> CreateIssue([FromBody] issuesListDTO issuesDTO)
         {
             if (issuesDTO == null)
